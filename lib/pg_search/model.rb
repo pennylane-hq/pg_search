@@ -28,7 +28,7 @@ module PgSearch
       end
     end
 
-    def method_missing(symbol, *args)
+    def method_missing(symbol, *args, **kwargs)
       case symbol
       when :pg_search_rank
         raise PgSearchRankNotSelected unless respond_to?(:pg_search_rank)
